@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #e0e5ec;
+  --text-primary: #2d4059;
+  --text-secondary: #8fa1b3;
+  --red-alert: #ff6b6b;
+  --green-alert: #20c997;
+  --shadow-light: #ffffff;
+  --shadow-dark: #a3b1c6;
+  --shadow-raised: 9px 9px 16px var(--shadow-dark), -9px -9px 16px var(--shadow-light);
+  --shadow-raised-sm: 5px 5px 10px var(--shadow-dark), -5px -5px 10px var(--shadow-light);
+  --shadow-raised-lg: 12px 12px 24px var(--shadow-dark), -12px -12px 24px var(--shadow-light);
+  --shadow-pressed: inset 6px 6px 10px var(--shadow-dark), inset -6px -6px 10px var(--shadow-light);
+  --shadow-pressed-sm: inset 3px 3px 6px var(--shadow-dark), inset -3px -3px 6px var(--shadow-light);
+}
+
+.dark {
+  --bg: #292d32;
+  --text-primary: #ffffff;
+  --text-secondary: #a3b1c6;
+  --red-alert: #ff6b6b;
+  --green-alert: #20c997;
+  --shadow-light: #31363c;
+  --shadow-dark: #212428;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Neumorphic Utilities */
+.neu-raised {
+  background: var(--bg);
+  box-shadow: var(--shadow-raised);
+}
+
+.neu-raised-sm {
+  background: var(--bg);
+  box-shadow: var(--shadow-raised-sm);
+}
+
+.neu-raised-lg {
+  background: var(--bg);
+  box-shadow: var(--shadow-raised-lg);
+}
+
+.neu-pressed {
+  background: var(--bg);
+  box-shadow: var(--shadow-pressed);
+}
+
+.neu-pressed-sm {
+  background: var(--bg);
+  box-shadow: var(--shadow-pressed-sm);
+}
+
+/* Transitions */
+.neu-btn {
+  transition: box-shadow 0.15s ease, transform 0.1s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.neu-btn:active {
+  box-shadow: var(--shadow-pressed) !important;
+  transform: scale(0.97);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--shadow-dark);
+  border-radius: 4px;
+}
+
+/* Page content area */
+.page-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  padding-bottom: 90px;
+}
